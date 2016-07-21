@@ -1,0 +1,20 @@
+import pymssql
+# conn = pymssql.connect(host='192.168.***B', user='***n', password='***6', database='***B')
+# cur = conn.cursor(as_dict=True)
+# cur.execute('select * from BLA_BLA')
+# print(cur.fetchall())
+# row = cur.fetchone()
+# print(row)
+# row = cur.fetchone()
+# print(row)
+# row = cur.fetchone()
+# print(row)
+# row = cur.fetchone()
+# print(row)
+# conn.close()
+with pymssql.connect(host='192.168.***B', user='***n', password='***6', database='***B') as conn:
+    with conn.cursor(as_dict=True) as cursor:
+        cursor.execute('select * from BLA_BLA')
+        a = cursor.fetchall()
+        print(a)
+        print(a[0]['ValueType'])
